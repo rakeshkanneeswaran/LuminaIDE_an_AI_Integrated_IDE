@@ -81,7 +81,7 @@ const FileExplorer = ({ onFileSelect }) => {
   };
 
   return (
-    <div className="file-explorer w-64 overflow-y-auto bg-gray-900 h-full p-2">
+    <div className="file-explorer w-64 overflow-y-auto bg-gray-900 text-gray-300 h-full p-2">
       {renderTree(fileTree)}
     </div>
   );

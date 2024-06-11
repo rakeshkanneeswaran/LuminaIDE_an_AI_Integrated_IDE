@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Terminal from "./components/terminal";
 import FileExplorer from "./components/tree";
 import AceEditor from "react-ace";
 import socket from './socket';
+import AIComponent from "./components/aichat";
 
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-javascript";
@@ -65,12 +66,13 @@ function App() {
   };
 
   return (
-    <div id="playground-container" className="flex flex-col h-screen bg-black">
-      <div className="flex justify-center items-center h-10 bg-gray-800 text-white shadow-md rounded-md mb-1 p-2">
+    <div id="playground-container" className="flex flex-col h-screen bg-gray-800">
+      <div className="flex justify-around items-center h-10 bg-gray-800 text-white shadow-md rounded-md mb-1 p-2">
+        <p>Lumina AI Studio</p>
         <p className="text-sm font-semibold">Current Location: {selectedFilePath.replaceAll("/", " > ")}</p>
       </div>
     
-      <div id="editor-container" className="h-[60vh] flex">
+      <div id="editor-container" className="flex flex-grow">
         <div id="files" className="bg-gray-800 overflow-scroll w-1/4">
           <FileExplorer onFileSelect={handleFileSelect} />
         </div>
@@ -89,8 +91,14 @@ function App() {
             }}
           />
         </div>
+        <div className="w-72 overflow-y-auto h-96 ">
+          <AIComponent />
+        </div>
       </div>
-      <div id="terminal-container" className="flex-grow">
+      <div className="flex justify-center text-white">
+      Lumina AI Studio Terminal Current:Bash
+      </div>
+      <div id="terminal-container">
         <Terminal />
       </div>
     </div>
