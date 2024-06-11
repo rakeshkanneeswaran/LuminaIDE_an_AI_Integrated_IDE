@@ -1,4 +1,4 @@
-# Lumina IDE and AI-Integrated IDE
+# Lumina IDE an AI-Integrated IDE
 
 A personalized Integrated Development Environment (IDE) developed from scratch, featuring seamless AI integration with models like LLaMA, Mistral, and LLava. This IDE includes a real-time terminal, an intuitive file explorer, and the Ace Editor to enhance productivity and streamline coding workflows.
 
